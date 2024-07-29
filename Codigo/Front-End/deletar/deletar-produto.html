@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir produto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+        defer></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="js" href="../script.js">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h3 class="text-center">Deletar Produto</h3>
+                <form id="deleteProductForm">
+                    <div class="form-group">
+                        <label for="produtoId">ID do Produto</label>
+                        <input type="number" class="form-control" id="produtoId" placeholder="Digite o ID do Produto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="artistaEmail">Email do Artista</label>
+                        <input type="email" class="form-control" id="artistaEmail" placeholder="Digite o Email do Artista" required>
+                    </div>
+                    <button type="submit" class="btn btn-danger btn-block">Deletar Produto</button>
+                </form>
+                <div id="deleteMessage" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('deleteProductForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const produtoId = document.getElementById('produtoId').value;
+            const artistaEmail = document.getElementById('artistaEmail').value;
+
+            fetch(`http://localhost:4567/produto/${produtoId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ artistaEmail: artistaEmail })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na resposta do servidor');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const deleteMessage = document.getElementById('deleteMessage');
+                if (data.success) {
+                    deleteMessage.innerHTML = `<div class="alert alert-success">Produto deletado com sucesso!</div>`;
+                } else {
+                    deleteMessage.innerHTML = `<div class="alert alert-danger">Erro ao deletar produto: ${data.message}</div>`;
+                }
+            })
+            .catch((error) => {
+                console.error('Erro:', error);
+                document.getElementById('deleteMessage').innerHTML = `<div class="alert alert-danger">Erro ao deletar produto</div>`;
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

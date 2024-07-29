@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artista</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+        defer></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="bg-light">
+    <!--
+        HEADER
+    -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow py-2 px-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../pesquisa/pesquisa.html">ConnectArt</a>
+            
+        </div>
+    </nav>
+    <!--
+        CONTAINER PRINCIPAL
+    -->
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="container col-lg-8">
+                <div class="d-flex gap-3">
+                    <!-- LOGOMARCA -->
+                    <div class="logomarca-image col-sm-6">
+                        <img src="../imagens/artista5.jpg" class="img-fluid shadow" alt="...">
+                        <div class="logomarca-overlay m-3">
+                            
+                            
+                        </div>
+                    </div>
+                    <!--FIM LOGOMARCA-->
+                    <!-- INFOS NEGOCIO -->
+                    <div class="col-sm-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="h5">Nome</label>
+                            <input type="text" class="form-control" id="nome_artista"
+                                placeholder="Nome artista">
+                        </div>
+
+                        <h1 class="h5 mt-3">Contato</h1>
+                        <div class="row g-3 align-items-center">
+                            <div class="col-auto">
+                                <label for="inputPassword6" class="col-form-label">Email:</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="form-control" id="email_artista" class="form-control"
+                                    aria-describedby="passwordHelpInline">
+                            </div>
+
+                            <div class="row g-3 align-items-center">
+                                <div class="col-auto">
+                                    <label for="inputPassword6" class="col-form-label">Telefone:</label>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="form-control" id="telefone_artista" class="form-control"
+                                        aria-describedby="passwordHelpInline">
+                                </div>
+                                <div class="mt-5 text-center"> 
+                                    <button class="btn btn-danger" id = "botaodeletarartista" onclick="redirecionarParaDeletarArtista()">Deletar</button>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- FIM INFOS NEGÓCIOS -->
+
+                </div>
+
+                
+
+                <hr>
+                <!--PRODUTOS-->
+                <h1>Produtos
+                    <button class="btn btn-dark" id="botaoadicionarproduto" onclick="redirecionarParaCriarProduto()">Adicionar produto</button>
+                    <button class="btn btn-danger" id = "botaodeletarartista" onclick="redirecionarParaDeletarProduto()">Deletar Produto</button>
+                    <button class="btn btn-primary" id = "botaodeletarartista" onclick="listaa()">Meus Produtos</button>
+                </h1>
+                <div class="container mt-5">
+                   
+                    <div class="row" id="productCards">
+                        <!-- Os produtos serão listados aqui -->
+                    </div>
+                </div>
+            
+                <hr>
+                <!--FIM PRODUTOS-->
+                
+                <!--FIM RECOMENDADOS-->
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!--
+        FIM CONTAINER PRINCIPAL
+    -->
+    <div class="container my-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light py-2 px-2 mx-4 row">
+            <div class="container-fluid col-6">
+                <a class="navbar-brand" href="#">ConnectArt</a>
+            </div>
+            <div class="col-2 border-start">
+                <a class="navbar-brand" href="#">Link 1</a><br>
+                <a class="navbar-brand" href="#">Link 2</a>
+            </div>
+            <div class="col-2">
+                <a class="navbar-brand" href="#">Link 3</a><br>
+                <a class="navbar-brand" href="#">Link 4</a>
+            </div>
+            <div class="col-2">
+                <a class="navbar-brand" href="#">Link 5</a><br>
+                <a class="navbar-brand" href="#">Link 6 </a>
+            </div>
+        </nav>
+    </div>
+    <!-- MODAIS -->
+    <!-- REGISTRAR -->
+    <div class="modal fade" id="modalRegistrar" tabindex="-1" aria-labelledby="modalRegistrarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Registrar como...</h1>
+                    <hr>
+                    <div class="row">
+                        <div class="modal-image col-6">
+                            <img src="https://via.placeholder.com/600x600" class="img-fluid rounded shadow">
+                            <div class="destaque-overlay">
+                                <h2>Cliente</h2>
+                                <button class="btn btn-dark" data-bs-target="#modalRegistrarCliente"
+                                    data-bs-toggle="modal">Registrar</button>
+                            </div>
+                        </div>
+                        <div class="modal-image col-6">
+                            <img src="https://via.placeholder.com/600x600" class="img-fluid rounded shadow">
+                            <div class="destaque-overlay">
+                                <h2>Negócio</h2>
+                                <button class="btn btn-dark" data-bs-target="#modalRegistrarNegocio"
+                                    data-bs-toggle="modal">Registrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- REGISTRAR NEGOCIO -->
+    <div class="modal fade" id="modalRegistrarNegocio" tabindex="-1" aria-labelledby="modalRegistrarNegocioLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Registrar como negócio</h1>
+                    <hr>
+                    <label for="basic-url" class="form-label">E-Mail</label>
+                    <input type="text" class="form-control" placeholder="emailDoNegocio@dominio.com.br"
+                        aria-label="E-Mail">
+                    <br>
+                    <label for="basic-url" class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome do Negócio" aria-label="Nome">
+                    <br>
+                    <label for="basic-url" class="form-label">Senha</label>
+                    <input type="password" class="form-control" placeholder="Senha do Negócio" aria-label="Senha">
+                    <hr>
+                    <div class="text-center">
+                        <button class="btn btn-dark" data-bs-toggle="modal">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- REGISTRAR CLIENTE -->
+    <div class="modal fade" id="modalRegistrarCliente" tabindex="-1" aria-labelledby="modalRegistrarClienteLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Registrar como cliente</h1>
+                    <hr>
+                    <label for="basic-url" class="form-label">E-Mail</label>
+                    <input type="text" class="form-control" placeholder="emailDoCliente@dominio.com.br"
+                        aria-label="E-Mail">
+                    <br>
+                    <label for="basic-url" class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome do Cliente" aria-label="Nome">
+                    <br>
+                    <label for="basic-url" class="form-label">Senha</label>
+                    <input type="password" class="form-control" placeholder="Senha do Cliente" aria-label="Senha">
+                    <hr>
+                    <div class="text-center">
+                        <button class="btn btn-dark" data-bs-toggle="modal">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ENTRAR -->
+    <div class="modal fade" id="modalEntrar" tabindex="-1" aria-labelledby="modalEntrarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Entrar como...</h1>
+                    <hr>
+                    <div class="row">
+                        <div class="modal-image col-6">
+                            <img src="https://via.placeholder.com/600x600" class="img-fluid rounded shadow">
+                            <div class="destaque-overlay">
+                                <h2>Cliente</h2>
+                                <button class="btn btn-dark" data-bs-target="#modalEntrarCliente"
+                                    data-bs-toggle="modal">Entrar</button>
+                            </div>
+                        </div>
+                        <div class="modal-image col-6">
+                            <img src="https://via.placeholder.com/600x600" class="img-fluid rounded shadow">
+                            <div class="destaque-overlay">
+                                <h2>Negócio</h2>
+                                <button class="btn btn-dark" data-bs-target="#modalEntrarNegocio"
+                                    data-bs-toggle="modal">Entrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ENTRAR NEGOCIO -->
+    <div class="modal fade" id="modalEntrarNegocio" tabindex="-1" aria-labelledby="modalEntrarNegocioLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Entrar como negócio</h1>
+                    <hr>
+                    <label for="basic-url" class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome do Negócio" aria-label="Nome">
+                    <br>
+                    <label for="basic-url" class="form-label">Senha</label>
+                    <input type="password" class="form-control" placeholder="Senha do Negócio" aria-label="Senha">
+                    <hr>
+                    <div class="text-center">
+                        <button class="btn btn-dark" data-bs-toggle="modal">Entrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ENTRAR CLIENTE -->
+    <div class="modal fade" id="modalEntrarCliente" tabindex="-1" aria-labelledby="modalEntrarClienteLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Entrar como cliente</h1>
+                    <hr>
+                    <label for="basic-url" class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome do Cliente" aria-label="Nome">
+                    <br>
+                    <label for="basic-url" class="form-label">Senha</label>
+                    <input type="password" class="form-control" placeholder="Senha do Cliente" aria-label="Senha">
+                    <hr>
+                    <div class="text-center">
+                        <button class="btn btn-dark" data-bs-toggle="modal">Entrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function redirecionarParaDeletarProduto() {
+            window.location.href = "../deletar/deletar-produto.html";
+        }
+    </script>
+    <script>
+        function redirecionarParaDeletarArtista() {
+            window.location.href = '../deletar/deletar-artista.html';
+        }
+    </script>
+    <script>
+        function redirecionarParaCriarProduto() {
+            window.location.href = '../produto/produto.html';
+        }
+    </script>
+    <script> window.onload = function() {
+        const artistaEmail = localStorage.getItem('artista_email');
+
+        if (artistaEmail) {
+            document.getElementById('email_artista').value = artistaEmail;
+            fetch(`http://localhost:4567/artista/${artistaEmail}`)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Artista não encontrado.');
+                    }
+                })
+                .then(artista => {
+                    document.getElementById('nome_artista').value = artista.artistaNome;
+                    document.getElementById('telefone_artista').value = artista.artistaTelefone;
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar o artista:', error);
+                });
+        }
+    };
+    </script>
+    <script>
+    function listaa(){
+        const artistaEmail = localStorage.getItem('artista_email');
+
+    if (!artistaEmail) {
+        alert('Artista não encontrado no localStorage.');
+        return;
+    }
+
+    fetch(`http://localhost:4567/produtos/artista/${artistaEmail}`)
+        .then(response => response.json())
+        .then(data => {
+            const productCards = document.getElementById('productCards');
+            productCards.innerHTML = ''; // Limpar os cards anteriores
+
+            data.forEach(produto => {
+                const card = document.createElement('div');
+                card.className = 'col-md-4 mb-4';
+                card.innerHTML = `
+                    <div class="card h-100 shadow-sm">
+                        <img src="../imagens/${produto.imagePath}" class="card-img-top" alt="${produto.produtoNome}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">${produto.produtoNome}</h5>
+                            <p class="card-text">Preço: R$${produto.produtoPreco.toFixed(2)}</p>
+                            <a href="detalhes-produto.html?id=${produto.produtoId}" class="btn btn-primary mt-auto">Ver Detalhes</a>
+                        </div>
+                    </div>
+                `;
+                productCards.appendChild(card);
+            });
+
+            if (productCards.children.length === 0) {
+                productCards.innerHTML = '<p>Nenhum produto encontrado.</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao carregar produtos:', error);
+            alert('Erro ao carregar produtos: ' + error.message);
+        });
+    }
+    </script>
+</body>

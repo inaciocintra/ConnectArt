@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+        defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-white">
+    <!--
+        HEADER
+    -->
+    <nav class="navbar navbar-expand-lg navbar-white bg-white shadow py-2 px-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ConnectArt</a>
+            <div class="d-flex">
+                <button type="button" class="btn btn-dark me-2" data-bs-toggle="modal"
+                    data-bs-target="#modalEntrar">Entrar</button>
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                    data-bs-target="#modalRegistrar">Registrar</button>
+            </div>
+        </div>
+    </nav>
+    <!--
+        CONTAINER PRINCIPAL
+    -->
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!--PESQUISAR-->
+                <h1 class="text-center">Pesquisar</h1>
+                <div class="mb-3">
+                    <div class="d-flex align-items-center">
+                        <input type="email" class="form-control bg-light shadow" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Pesquisar">
+                        <button class="ms-2 btn btn-dark shadow">Pesquisar</button>
+                    </div>
+                </div>
+                <hr>
+                <!--FIM DO PESQUISAR-->
+                <!-- DESTAQUE -->
+                <div class="destaque-image shadow">
+                    <img src="https://via.placeholder.com/1200x600" class="img-fluid" alt="Imagem Destaque">
+                    <div class="destaque-overlay">
+                        <h2>Destaque</h2>
+                        <p>Descrição do destaque</p>
+                        <button class="btn btn-dark">Conferir</button>
+                    </div>
+                </div>
+                <!--FIM DESTAQUE-->
+                <hr>
+                <!--POPULARES-->
+                <h1>Populares</h1>
+                <div class="popular">
+                    <div class="row">
+                        <!-- Primeira coluna -->
+                        <div class="col-sm-6">
+                            <!-- Imagem grande -->
+                            <a href="#" id="popular1Ref">
+                                <img src="https://via.placeholder.com/300x300" class="img-fluid rounded shadow w-100" id="popular1Imagem">
+                            </a>
+                            <!-- Texto abaixo da imagem -->
+                            <div class="mt-2" id="popular1Dados">
+                                <h5 class="fw-bold mb-1">Popular 1</h5>
+                                <p class="mb-1">Descrição de produto popular</p>
+                                <p class="mb-0 fw-bold">R$10.00</p>
+                            </div>
+                        </div>
+                        <!-- Fim Primeira Coluna-->
+                        <!-- Segunda coluna -->
+                        <div class="col-sm-6">
+                            <!-- Primeira fileira da coluna -->
+                            <div class="row h-50">
+                                <!-- Imagem com altura limitada -->
+                                <a href="#" id="popular2Ref">
+                                    <img src="https://via.placeholder.com/150x150"
+                                        class="img-fluid rounded shadow w-100"
+                                        style="max-height: 150px; object-fit: cover" id="popular2Imagem">
+                                </a>
+                                <!-- Texto abaixo da imagem -->
+                                <div class="mt-2" id="popular2Dados">
+                                    <h6 class="fw-bold mb-1">Popular 2</h6>
+                                    <p class="mb-1">Descrição de produto popular</p>
+                                    <p class="mb-0 fw-bold">R$20.00</p>
+                                </div>
+                            </div>
+                            <!-- Segunda fileira da coluna -->
+                            <div class="row h-50">
+                                <!-- Imagem com altura limitada -->
+                                <a href="#" id="popular3Ref">
+                                    <img src="https://via.placeholder.com/150x150"
+                                        class="img-fluid rounded shadow w-100"
+                                        style="max-height: 150px; object-fit: cover" id="popular3Imagem">
+                                </a>
+                                <!-- Texto abaixo da imagem -->
+                                <div class="mt-2" id="popular3Dados">
+                                    <h6 class="fw-bold mb-1">Popular 3</h6>
+                                    <p class="mb-1">Descrição de produto popular</p>
+                                    <p class="mb-0 fw-bold">R$30.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fim Segunda Coluna-->
+                    </div>
+                </div>
+                <hr>
+                <!--FIM POPULARES-->
+                <!--RECOMENDADOS-->
+                <h1>Recomendados</h1>
+                <div class="recomendados">
+                    <div class="row" id="recomendadosCards">
+                    </div>
+                </div>
+                <!--FIM RECOMENDADOS-->
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!--
+        FIM CONTAINER PRINCIPAL
+    -->
+    <div class="container my-5">
+        <nav class="navbar navbar-expand-lg navbar-white bg-white py-2 px-2 mx-4 row">
+            <div class="container-fluid col-6">
+                <a class="navbar-brand" href="#">ConnectArt</a>
+            </div>
+            <div class="col-2 border-start">
+                <a class="navbar-brand" href="#">Link 1</a><br>
+                <a class="navbar-brand" href="#">Link 2</a>
+            </div>
+            <div class="col-2">
+                <a class="navbar-brand" href="#">Link 3</a><br>
+                <a class="navbar-brand" href="#">Link 4</a>
+            </div>
+            <div class="col-2">
+                <a class="navbar-brand" href="#">Link 5</a><br>
+                <a class="navbar-brand" href="#">Link 6 </a>
+            </div>
+        </nav>
+    </div>
+    <!-- MODAIS -->
+    <!-- REGISTRAR -->
+    <div class="modal fade" id="modalRegistrar" tabindex="-1" aria-labelledby="modalRegistrarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Registrar como...</h1>
+                    <hr>
+                    <div class="row">
+                        <div class="modal-image col-6">
+                            <img src="https://via.placeholder.com/600x600" class="img-fluid rounded shadow">
+                            <div class="destaque-overlay">
+                                <h2>Cliente</h2>
+                                <button class="btn btn-dark" data-bs-target="#modalRegistrarCliente"
+                                    data-bs-toggle="modal">Registrar</button>
+                            </div>
+                        </div>
+                        <div class="modal-image col-6">
+                            <img src="https://via.placeholder.com/600x600" class="img-fluid rounded shadow">
+                            <div class="destaque-overlay">
+                                <h2>Negócio</h2>
+                                <button class="btn btn-dark" data-bs-target="#modalRegistrarNegocio"
+                                    data-bs-toggle="modal">Registrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- REGISTRAR NEGOCIO -->
+    <div class="modal fade" id="modalRegistrarNegocio" tabindex="-1" aria-labelledby="modalRegistrarNegocioLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Registrar como negócio</h1>
+                    <hr>
+                    <label for="basic-url" class="form-label">E-Mail</label>
+                    <input type="text" class="form-control" placeholder="emailDoNegocio@dominio.com.br"
+                        aria-label="E-Mail">
+                    <br>
+                    <label for="basic-url" class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome do Negócio" aria-label="Nome">
+                    <br>
+                    <label for="basic-url" class="form-label">Senha</label>
+                    <input type="password" class="form-control" placeholder="Senha do Negócio" aria-label="Senha">
+                    <hr>
+                    <div class="text-center">
+                        <button class="btn btn-dark" data-bs-toggle="modal">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- REGISTRAR CLIENTE -->
+    <div class="modal fade" id="modalRegistrarCliente" tabindex="-1" aria-labelledby="modalRegistrarClienteLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Registrar como cliente</h1>
+                    <hr>
+                    <label for="basic-url" class="form-label">E-Mail</label>
+                    <input type="text" id= "clienteEmail" class="form-control" placeholder="emailDoCliente@dominio.com.br"
+                        aria-label="E-Mail">
+                    <br>
+                    <label for="basic-url" class="form-label">Nome</label>
+                    <input type="text" id= "clienteNome" class="form-control" placeholder="Nome do Cliente" aria-label="Nome">
+                    <br>
+                    <label for="basic-url" class="form-label">Senha</label>
+                    <input type="password" id= "clienteSenha" class="form-control" placeholder="Senha do Cliente" aria-label="Senha">
+                    <hr>
+                    <div class="text-center">
+                        <button class="btn btn-dark" data-bs-toggle="modal">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ENTRAR -->
+    <div class="modal fade" id="modalEntrar" tabindex="-1" aria-labelledby="modalEntrarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Entrar como...</h1>
+                    <hr>
+                    <div class="row">
+                        <div class="modal-image col-6">
+                            <img src="https://via.placeholder.com/600x600" class="img-fluid rounded shadow">
+                            <div class="destaque-overlay">
+                                <h2>Cliente</h2>
+                                <button class="btn btn-dark" data-bs-target="#modalEntrarCliente"
+                                    data-bs-toggle="modal">Entrar</button>
+                            </div>
+                        </div>
+                        <div class="modal-image col-6">
+                            <img src="https://via.placeholder.com/600x600" class="img-fluid rounded shadow">
+                            <div class="destaque-overlay">
+                                <h2>Negócio</h2>
+                                <button class="btn btn-dark" data-bs-target="#modalEntrarNegocio"
+                                    data-bs-toggle="modal">Entrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ENTRAR NEGOCIO -->
+    <div class="modal fade" id="modalEntrarNegocio" tabindex="-1" aria-labelledby="modalEntrarNegocioLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Entrar como negócio</h1>
+                    <hr>
+                    <label for="basic-url" class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome do Negócio" aria-label="Nome">
+                    <br>
+                    <label for="basic-url" class="form-label">Senha</label>
+                    <input type="password" class="form-control" placeholder="Senha do Negócio" aria-label="Senha">
+                    <hr>
+                    <div class="text-center">
+                        <button class="btn btn-dark" data-bs-toggle="modal">Entrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ENTRAR CLIENTE -->
+    <div class="modal fade" id="modalEntrarCliente" tabindex="-1" aria-labelledby="modalEntrarClienteLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h1 class="text-center">Entrar como cliente</h1>
+                    <hr>
+                    <label for="basic-url" class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome do Cliente" aria-label="Nome">
+                    <br>
+                    <label for="basic-url" class="form-label">Senha</label>
+                    <input type="password" class="form-control" placeholder="Senha do Cliente" aria-label="Senha">
+                    <hr>
+                    <div class="text-center">
+                        <button class="btn btn-dark" data-bs-toggle="modal">Entrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

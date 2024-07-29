@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Usuário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+        defer></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow py-2 px-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ConnectArt</a>
+            <div class="d-flex">
+                <button type="button" class="btn btn-dark me-2" data-bs-toggle="modal"
+                    data-bs-target="#modalEntrar">Entrar</button>
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                    data-bs-target="#modalRegistrar">Registrar</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">Perfil do Usuário</h1>
+                        <hr>
+                        <div class="row">
+                            <div class="logomarca-image col-sm-6">
+                                <img src="https://via.placeholder.com/500x500" class="img-fluid shadow" alt="Imagem Destaque">
+                                <div class="logomarca-overlay m-3">
+                                    <h2>Logomarca</h2>
+                                    <button class="btn btn-dark">Alterar</button>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h3 class="card-subtitle mb-2 text-muted">Luigi Castro Silveira</h3>
+                                <p class="card-text">Email: luigi@email.com</p>
+                                <p class="card-text">Telefone: (00) 1234-5678</p>
+                                <p class="card-text">Região: Centro</p>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card my-4 shadow">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Compras Recentes</h2>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product Image">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product Name 1</h5>
+                                        <p class="card-text">Product Description 1</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product Image">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product Name 2</h5>
+                                        <p class="card-text">Product Description 2</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product Image">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product Name 3</h5>
+                                        <p class="card-text">Product Description 3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light py-2 px-2 mx-4 row">
+            <div class="container-fluid col-6">
+                <a class="navbar-brand" href="#">ConnectArt</a>
+            </div>
+            <div class="col-2 border-start">
+                <a class="navbar-brand" href="#">Link 1</a><br>
+                <a class="navbar-brand" href="#">Link 2</a>
+            </div>
+            <div class="col-2">
+                <a class="navbar-brand" href="#">Link 3</a><br>
+                <a class="navbar-brand" href="#">Link 4</a>
+            </div>
+            <div class="col-2">
+                <a class="navbar-brand" href="#">Link 5</a><br>
+                <a class="navbar-brand" href="#">Link 6 </a>
+            </div>
+        </nav>
+    </div>
+    <div class="modal fade" id="modalRegistrar" tabindex="-1" aria-labelledby="modalRegistrarLabel" aria-hidden="true">
+    </div>
+    <div class="modal fade" id="modalRegistrarNegocio" tabindex="-1" aria-labelledby="modalRegistrarNegocioLabel"
+        aria-hidden="true">
+    </div>
+    <div class="modal fade" id="modalRegistrarCliente" tabindex="-1" aria-labelledby="modalRegistrarClienteLabel"
+        aria-hidden="true">
+    </div>
+    <div class="modal fade" id="modalEntrar" tabindex="-1" aria-labelledby="modalEntrarLabel" aria-hidden="true">
+    </div>
+    <div class="modal fade" id="modalEntrarNegocio" tabindex="-1" aria-labelledby="modalEntrarNegocioLabel"
+        aria-hidden="true">
+    </div>
+    <div class="modal fade" id="modalEntrarCliente" tabindex="-1" aria-labelledby="modalEntrarClienteLabel"
+        aria-hidden="true">
+    </div>
+</body>
+
+</html>
